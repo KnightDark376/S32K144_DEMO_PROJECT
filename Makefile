@@ -8,8 +8,8 @@ BIN_DIR         := $(OUTPUT_DIR)/bin
 BUILD_DIR       := $(OUTPUT_DIR)/build
 MAP_DIR         := $(OUTPUT_DIR)/map
 SUBDIR_PATH     := $(PRO_DIR)/src/App \
-				   $(PRO_DIR)/src/Drivers \
-				   $(PRO_DIR)/src/System
+		   $(PRO_DIR)/src/Drivers \
+		   $(PRO_DIR)/src/System
 SUBDIR          := $(foreach find_folder,$(SUBDIR_PATH), $(wildcard $(find_folder)/*))
 
 MKDIR           := mkdir -p
@@ -18,12 +18,12 @@ RM              := rm -rf
 
 # All path of directory contain the headers '.h' participating in the build are defined here
 INC_DIRS        := $(PRO_DIR)/include \
-			       $(SUBDIR)
+		$(SUBDIR)
 
 # All path of directory contain the sources '.c' participating in the build are defined here
 SRC_DIRS        := $(PRO_DIR)/src \
-			       $(PRO_DIR)/Project_Settings/Startup_Code \
-			       $(SUBDIR)
+		$(PRO_DIR)/Project_Settings/Startup_Code \
+		$(SUBDIR)
 
 # List of all source files participating in the build project
 SRC_FILES       := $(foreach SRC_DIRS,$(SRC_DIRS),$(wildcard $(SRC_DIRS)/*.c))
